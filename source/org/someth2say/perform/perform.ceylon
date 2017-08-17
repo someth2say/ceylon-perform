@@ -66,10 +66,11 @@ shared
 
 shared
 void benchmark(
-        tests, warmupRounds = 3, benchRounds = 5, scale = 1,
+        tests, name=null, warmupRounds = 3, benchRounds = 5, scale = 1,
         sleepMillis = 100, iterations = 1, quiet = true,
         veryQuiet = false) {
 
+    String? name;
     Integer warmupRounds;
     Integer benchRounds;
     Integer scale;
@@ -246,7 +247,7 @@ void benchmark(
         results.collect((TestResults<Anything> element) => element.resetStats());
     }
 
-    print("\nSummary min/max/avg/rstddev (pct): ``benchRounds`` rounds");
+    print("\n``name else "No-name"``: Summary min/max/avg/rstddev (pct): ``benchRounds`` rounds");
     printStats(true);
 
 }
